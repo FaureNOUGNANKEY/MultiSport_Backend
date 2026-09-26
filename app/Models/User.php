@@ -29,4 +29,25 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function admin()
+    {
+        return $this->hasOne(Admin::class);
+    }
+    public function club()
+    {
+        return $this->hasOne(Club::class);
+    }
+    public function federation()
+    {
+        return $this->hasOne(Federation::class);
+    }
+    public function league()
+    {
+        return $this->hasOne(League::class);
+    }
+    public function member()
+    {
+        return $this->hasOne(Member::class);
+    }
 }

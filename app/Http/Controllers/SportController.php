@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreSportRequest;
 use App\Http\Resources\SportResource;
 use App\Models\Sport;
 use Illuminate\Http\Request;
@@ -20,7 +21,7 @@ class SportController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreSportRequest $request)
     {
         $sport = Sport::create($request->validated());
         return new SportResource($sport);
@@ -31,14 +32,14 @@ class SportController extends Controller
      */
     public function show(int $id)
     {
-        $sport = Sport::firstOrFail($id);
+        $sport = Sport::findOrFail($id);
         return new SportResource($sport);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, int $id)
+    public function update(StoreSportRequest $request, int $id)
     {
         $sport = Sport::findOrFail($id);
         $sport->update($request->validated());
