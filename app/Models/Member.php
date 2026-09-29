@@ -6,10 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Member extends Model
 {
-    protected $fillable = ['user_id','lastname','firstname','address','fatherPhone','motherPhone','fatherEmail','motherEmail','athletePhone','athleteEmail','birthday','height','weight','nonice','level','previousInstructor','diseases','surgicalHistory','currentTreatment','allergy','others'];
-    
+    protected $fillable = ['user_id','club_id','lastname','firstname','address','fatherPhone','motherPhone','fatherEmail','motherEmail','athletePhone','athleteEmail','birthday','height','weight','nonice','level','previousInstructor','diseases','surgicalHistory','currentTreatment','allergy','others'];
+
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function club()
+    {
+        return $this->belongsTo(Club::class);
     }
 }

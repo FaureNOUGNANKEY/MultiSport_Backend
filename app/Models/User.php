@@ -50,4 +50,9 @@ class User extends Authenticatable
     {
         return $this->hasOne(Member::class);
     }
+
+    public function log()
+    {
+        return $this->hasMany(Log::class);
+    }
 }
