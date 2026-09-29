@@ -10,6 +10,7 @@ use App\Http\Controllers\ClubController;
 use App\Http\Controllers\FederationController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LogController;
+use App\Http\Controllers\BureauController;
 
 // Route::get('/user', function (Request $request) {
 //     return $request->user();
@@ -25,6 +26,8 @@ Route::apiResource('clubs', ClubController::class);
 Route::apiResource('federations', FederationController::class);
 Route::apiResource('admins', AdminController::class);
 Route::apiResource('logs', LogController::class);
+Route::apiResource('bureaus', BureauController::class);
+
 
 
 
